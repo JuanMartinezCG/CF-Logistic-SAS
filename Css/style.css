@@ -1,0 +1,211 @@
+/* ===============================
+   COLORES CORPORATIVOS
+   =============================== */
+:root {
+    --azul-oscuro: #2c3e50;   /* Color principal */
+    --azul-medio:  #34495e;   /* Variación oscura */
+    --azul-claro:  #3498db;   /* Color acento */
+    --azul-hover:  #2980b9;   /* Hover botones */
+    --gris-claro:  #ecf0f1;   /* Fondo secciones */
+    --blanco:      #ffffff;
+}
+
+/* ===============================
+   RESET BÁSICO
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===============================
+   ESTILO GENERAL
+   =============================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--gris-claro);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===============================
+   HEADER / HERO
+   =============================== */
+#main-header {
+    height: 80vh; /* Pantalla grande tipo folleto */
+    background:
+        linear-gradient(
+            rgba(44, 62, 80, 0.85),
+            rgba(52, 152, 219, 0.85)
+        );
+    color: var(--blanco);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 4rem;
+    letter-spacing: 4px;
+}
+
+.header-content p {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* ===============================
+   CONTENIDO
+   =============================== */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+/* ===============================
+   TÍTULOS
+   =============================== */
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--azul-oscuro);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Línea decorativa */
+section h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--azul-claro);
+    display: block;
+    margin: 15px auto 0;
+}
+
+/* ===============================
+   SECCIONES
+   =============================== */
+section {
+    margin-bottom: 100px;
+}
+
+/* ===============================
+   QUIÉNES SOMOS - TARJETAS
+   =============================== */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.value-card {
+    background: var(--blanco);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 4px solid var(--azul-claro);
+
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    background: linear-gradient(
+        135deg,
+        var(--azul-claro),
+        var(--azul-hover)
+    );
+    color: var(--blanco);
+    transform: translateY(-10px);
+}
+
+/* ===============================
+   TARJETAS GENERALES
+   =============================== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--blanco);
+    padding: 35px;
+    border-radius: 10px;
+    border-left: 5px solid var(--azul-claro);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* ===============================
+   CONTACTO
+   =============================== */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.contact-item {
+    background: var(--blanco);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+footer {
+    background: linear-gradient(
+        135deg,
+        var(--azul-oscuro),
+        #1a252f
+    );
+    color: var(--blanco);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+}
+/* ===============================*/
+
+section {
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
